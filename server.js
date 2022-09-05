@@ -57,7 +57,7 @@ app.post("/register",async(req,res)=>{
     let data=await user(id)
     if (data!==undefined){
         if (data.Password==pswd){
-            axios.get("http://localhost:5000/home").then(function(response){
+            axios.get("http://Login-env.eba-9ycuy9kr.us-east-1.elasticbeanstalk.com/home").then(function(response){
             res.send(response.data)
             }).catch(function(err){console.log(err)})
         }
