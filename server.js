@@ -68,4 +68,4 @@ app.post("/register",async(req,res)=>{
  app.get("/home",(req,res)=>{
     res.send("Welcome to the home page")
  })
- app.listen(5000)
+ app.listen(port)
