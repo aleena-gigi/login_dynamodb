@@ -9,7 +9,7 @@ AWS.config.update({
     acessKeyId:process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey:process.env.AWS_SECRET_ACCESS_KEY
 })
-const port=process.env.port||4000
+const port=process.env.port||5000
 const dynamoclient=new AWS.DynamoDB.DocumentClient();
 
 let user=async(id)=>{
