@@ -25,7 +25,7 @@ let user=async(id)=>{
 app.get("/",(req,res)=>{
     res.send("Login to continue")
 })
-app.get("/register",async(req,res)=>{
+app.post("/register",async(req,res)=>{
     id=req.query.emailId
     pswd=req.query.Password
     if (await user(id)!==undefined)
@@ -57,7 +57,7 @@ app.get("/register",async(req,res)=>{
     let data=await user(id)
     if (data!==undefined){
         if (data.Password==pswd){
-            axios.get("http://localhost:4000/home").then(function(response){
+            axios.get("http://localhost:5000/home").then(function(response){
             res.send(response.data)
             }).catch(function(err){console.log(err)})
         }
@@ -68,4 +68,4 @@ app.get("/register",async(req,res)=>{
  app.get("/home",(req,res)=>{
     res.send("Welcome to the home page")
  })
- app.listen(4000)
+ app.listen(5000)
